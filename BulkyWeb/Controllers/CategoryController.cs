@@ -24,9 +24,11 @@ namespace BulkyWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            if (obj.Name.ToLower() == obj.DisplayOrder.ToString()) { 
+            if (obj.Name.ToLower() == obj.DisplayOrder.ToString())
+            { 
                 ModelState.AddModelError("Name", "Category Name and Display Order cannot be the same"); 
             }
+
             if(ModelState.IsValid)
             {
                 db.Categories.Add(obj);
@@ -34,8 +36,7 @@ namespace BulkyWeb.Controllers
                 return RedirectToAction("Index");
             }
             return View();
-            
-            
+                        
         }
     }
 }
