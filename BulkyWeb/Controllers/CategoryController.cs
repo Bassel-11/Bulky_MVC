@@ -70,7 +70,7 @@ namespace BulkyWeb.Controllers
             {
                 return NotFound();
             }
-            Category categoryFromDb = db.Categories.Find(id);
+            Category? categoryFromDb = db.Categories.Find(id);
             if (categoryFromDb == null)
             {
                 return NotFound();
