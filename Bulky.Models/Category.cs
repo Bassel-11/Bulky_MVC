@@ -6,7 +6,7 @@ namespace Bulky.Models
     public class Category
     {
         [Key]
-        public int CatigoryId { get; set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(30)]
         [DisplayName("Category Name")]

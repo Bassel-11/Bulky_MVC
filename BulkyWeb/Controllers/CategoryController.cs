@@ -46,7 +46,7 @@ namespace BulkyWeb.Controllers
             {
                 return NotFound();
             }
-            Category categoryFromDb = unitOfWork.Category.Get(u=>u.CatigoryId == id);
+            Category categoryFromDb = unitOfWork.Category.Get(u=>u.Id == id);
             if (categoryFromDb == null)
             {
                 return NotFound();
@@ -73,7 +73,7 @@ namespace BulkyWeb.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = unitOfWork.Category.Get(u=> u.CatigoryId == id);
+            Category? categoryFromDb = unitOfWork.Category.Get(u=> u.Id == id);
             if (categoryFromDb == null)
             {
                 return NotFound();
@@ -84,7 +84,7 @@ namespace BulkyWeb.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePost(int? id)
         {
-            Category obj = unitOfWork.Category.Get(u => u.CatigoryId == id);
+            Category obj = unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
